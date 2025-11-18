@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROBUSTE-IA — Boutiques clés en main</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #0b0f19;
+      color: #fff;
+    }
+
+    /* --- BOUTON RETOUR ACCUEIL --- */
+    .back-home {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 25px auto 20px;
+      padding: 10px 22px;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(60,123,255,0.12);
+      border: 1px solid rgba(60,123,255,0.4);
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(60,123,255,0.35);
+      transition: all 0.25s ease-in-out;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: fit-content;
+    }
+
+    .back-home .arrow {
+      font-size: 18px;
+      color: #48ffb1;
+      transition: transform 0.2s ease;
+    }
+
+    .back-home:hover {
+      background: rgba(60,123,255,0.25);
+      transform: translateX(-50%) translateY(-2px);
+      box-shadow: 0 0 18px rgba(60,123,255,0.5);
+    }
+
+    .back-home:hover .arrow {
+      transform: translateX(-3px);
+    }
+
+    @media (max-width: 600px) {
+      .back-home {
+        margin-top: 15px;
+        font-size: 13px;
+        padding: 9px 18px;
+      }
+      .back-home .arrow {
+        font-size: 16px;
+      }
+    }
+
+    /* Bande défilante */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: #0b0f19;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 0;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
+    .marquee {
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transform: skewX(-8deg);
+      display: flex;
+      align-items: center;
+    }
+    .marquee span { margin-right: 50px; color: #e8ecf5; }
+    .highlight { color: #3c7bff; }
+    .price { color: #48ffb1; }
+    .shopify-logo {
+      height: 38px;
+      margin-left: 14px;
+      margin-right: 50px;
+      filter: brightness(0) invert(1);
+    }
+    @keyframes scroll {
+      0% {transform: translateX(0);}
+      100% {transform: translateX(-50%);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bouton retour stylé -->
+  <a href="index.html" class="back-home">
+    <span class="arrow">←</span> Retour à l’accueil
+  </a>
+
+  <!-- Bande défilante -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee">
+        <span><span class="highlight">ROBUSTE-IA</span> — Boutique clé en main à <span class="price">100 €</span> • Livraison 24 h • Assistance complète</span>
+        <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify" class="shopify-logo">
+      </div>
+    </div>
+  </div>
+  
+    <!-- SECTION BOUTIQUES -->
+  <style>
+    .container {
+      max-width: 750px;
+      margin: 40px auto;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .boutique {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .boutique:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,.4);
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .info {
+      flex: 1;
+      margin-left: 12px;
+    }
+    .info h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-left: 10px;
+    }
+    .actions a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: .2s;
+      min-width: 130px;
+    }
+    .visit {
+      background: rgba(60,123,255,0.15);
+      border: 1px solid rgba(60,123,255,0.4);
+      color: #3c7bff;
+    }
+    .buy {
+      background: #3c7bff;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(60,123,255,0.4);
+    }
+    .buy:hover { background: #2e6ae3; }
+  </style>
+
+  <div class="container">
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/5NSCs8PR/IMG-2267.jpg" alt="Misty Phases"></div>
+      <div class="info"><h3>Misty Phases</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://mistyphases.com/products/belli-band" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/rsxMfCMG/IMG-2273.jpg" alt="Feelingirl"></div>
+      <div class="info"><h3>Feelingirl</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://www.feelingirl.com/products/feelingirl-smooth-seamless-comfort-wireless-bra" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/BvrbSvYj/IMG-2268.jpg" alt="Omotesandō Plant"></div>
+      <div class="info"><h3>Omotesandō Plant</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://omotesandoplants.com/products/cupula-rose" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/fTnQCrky/IMG-2269.jpg" alt="Meller"></div>
+      <div class="info"><h3>Meller</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://mellerbrand.com/fr/products/nayah-all-black-2" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/pLvxW6Hb/IMG-2295.jpg" alt="GOURMETIFIC"></div>
+      <div class="info"><h3>GOURMETIFIC</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://gourmetific.com/en-gb/products/turboscrub-pro" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- SUITE DES BOUTIQUES -->
+  <div class="container">
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/TwfTtNth/IMG-2293.jpg" alt="Strpps"></div>
+      <div class="info"><h3>Strpps</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://stepprs.com/products/massage" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/SsCzMPJ8/IMG-2292.jpg" alt="Warry"></div>
+      <div class="info"><h3>Warry</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://the-warmy.com/en-gb/products/ovrs" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/xdnYtb4h/IMG-2272.jpg" alt="DEESTS"></div>
+      <div class="info"><h3>DEESTS</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://deets.feedreader.com/www.getheyshape.com/products/heyshape%E2%84%A2-snatched-bodysuit" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/sDFwbFYC/IMG-2290.jpg" alt="JW PEI UK"></div>
+      <div class="info"><h3>JW PEI UK</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://www.jwpei.co.uk/" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/qqWXTKhg/IMG-2289.jpg" alt="L&L SKIN"></div>
+      <div class="info"><h3>L & L SKIN</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://llskinshop.com/products/led-mask" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/wxwGr4wc/IMG-2288.jpg" alt="Clogg’s"></div>
+      <div class="info"><h3>Clogg’s</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://cloggs.us/products/cloggs-3?shpxid=b158be17-3593-46d2-94bb-abeeb53b47f1" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/CMCFf0LP/IMG-2287.jpg" alt="RayCon"></div>
+      <div class="info"><h3>RayCon</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://rayconglobal.com/products/the-fitness-earbuds" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/3w6w9FPW/IMG-2286.jpg" alt="Megelin"></div>
+      <div class="info"><h3>Megelin</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://www.megelin.com/products/megelin-led-light-therapy-machine" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/fRckzdtr/IMG-2285.jpg" alt="Distonpion"></div>
+      <div class="info"><h3>Distonpion</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://distopion.de/products/inferno-shades" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div class="boutique">
+      <div class="logo"><img src="https://i.postimg.cc/qRfm89Mj/IMG-2283.jpg" alt="Conturve"></div>
+      <div class="info"><h3>Conturve</h3></div>
+      <div class="actions">
+        <a class="visit" href="https://www.conturve.com/products/high-waisted-shaping-panty" target="_blank">Visiter</a>
+        <a class="buy" href="https://afoimiqn.mychariow.shop/prd_hbu51i" target="_blank">Commander</a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- PARTENAIRES -->
+  <section class="partners-section">
+    <h2>Nos partenaires & plateformes</h2>
+    <p>Ils nous font confiance pour propulser vos boutiques en ligne.</p>
+
+    <div class="partners-grid">
+      <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify">
+      <img src="https://i.postimg.cc/DyK70Rcg/IMG-2198.png" alt="AliExpress">
+      <img src="https://i.postimg.cc/8PHg5ccG/IMG-2199.png" alt="Amazon">
+      <img src="https://i.postimg.cc/SRhHQbpt/IMG-2200.png" alt="TikTok">
+      <img src="https://i.postimg.cc/0yB3Mws8/IMG-2201.png" alt="Facebook">
+      <img src="https://i.postimg.cc/qMBZ1LB6/IMG-2202.png" alt="Instagram">
+      <img src="https://i.postimg.cc/Kcf03M7R/IMG-2204.png" alt="Puma">
+      <img src="https://i.postimg.cc/9fypmRFF/IMG-2205.png" alt="Adidas">
+      <img src="https://i.postimg.cc/x8pGxLg8/IMG-2206.png" alt="Google Ads">
+    </div>
+  </section>
+
+  <style>
+    /* SECTION PARTENAIRES — Taille ajustée */
+    .partners-section {
+      padding: 60px 20px 50px;
+      text-align: center;
+      background: #0b0f19;
+    }
+    .partners-section h2 {
+      font-size: 22px;
+      color: #ffffff;
+      margin-bottom: 8px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .partners-section p {
+      color: #9aa4b8;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      max-width: 600px;
+      margin: auto;
+    }
+    .partners-grid img {
+      width: 35px; /* Logos réduits */
+      height: auto;
+      opacity: 0.8;
+      filter: brightness(0) invert(1);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .partners-grid img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+    @media (max-width: 600px) {
+      .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .partners-grid img {
+        width: 30px;
+      }
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 60px 20px;
+      background: #0b0f19;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .faq-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+    .faq {
+      max-width: 750px;
+      margin: auto;
+      text-align: left;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: rgba(255,255,255,0.06);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 18px 16px;
+      color: #a9b3c8;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 25px 10px 35px;
+      text-align: center;
+      color: #8b94a5;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">Comment fonctionne la commande d’une boutique ?</button>
+        <div class="faq-answer">
+          <p>Choisissez la boutique, cliquez sur “Commander”, effectuez le paiement et recevez votre boutique prête sous 24 h.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Quand vais-je recevoir ma boutique ?</button>
+        <div class="faq-answer">
+          <p>Une fois le paiement validé, vous recevez votre boutique complète avec ses accès dans les 24 h maximum.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Puis-je modifier ma boutique ?</button>
+        <div class="faq-answer">
+          <p>Oui, vous pouvez changer le logo, les produits, les couleurs et les moyens de paiement à votre convenance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Quels moyens de paiement acceptez-vous ?</button>
+        <div class="faq-answer">
+          <p>Nous acceptons les cartes, mobile money et cryptos via notre partenaire sécurisé MyChariow.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Proposez-vous une assistance après l’achat ?</button>
+        <div class="faq-answer">
+          <p>Oui, notre assistance est disponible 7 j/7 sur Telegram pour vous aider à configurer ou personnaliser votre boutique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 ROBUSTE-IA — Boutiques clés en main • Livraison 24 h
+  </footer>
+
+  <!-- SCRIPT FAQ -->
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
