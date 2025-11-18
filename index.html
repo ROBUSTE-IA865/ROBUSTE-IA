@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROBUSTE-IA — Crée ta boutique Shopify en 24h</title>
+
+<style>
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: #0b0f19;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  padding: 14px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(11,15,25,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg,#4aa9ff,#b5d9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 14px rgba(74,169,255,0.55);
+  cursor: pointer;
+}
+
+.header-menu {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #cfd3df;
+  font-size: 14px;
+  transition: .2s;
+}
+.header-menu a:hover {
+  color: white;
+}
+
+/* MARQUEE SOUS LE MENU */
+.top-marquee {
+  position: fixed;
+  top: 80px; /* légèrement plus bas */
+  left: 0;
+  width: 100%;
+  background: rgba(40,115,255,0.3);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.top-marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 12s linear infinite;
+}
+
+.top-marquee img {
+  height: 26px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* HERO */
+.hero {
+  padding-top: 180px; /* ajusté pour compenser la bande */
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #9aa4b8;
+  max-width: 620px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta-box {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-main {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #3c7bff;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(60,123,255,0.5);
+}
+
+/* PARTENAIRES */
+.partners {
+  margin-top: 60px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+  padding: 0 25px 50px;
+  box-sizing: border-box;
+}
+
+.partners img {
+  width: 90px;
+  margin: auto;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: .25s;
+}
+.partners img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  padding: 25px 20px 35px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #8b94a5;
+  font-size: 14px;
+}
+
+.kmj {
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.5;
+  letter-spacing: 3px;
+}
+
+/* MOBILE */
+@media(max-width:650px) {
+  .hero h1 { font-size: 30px; }
+  .top-marquee { font-size: 15px; top: 72px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ROBUSTE-IA</div>
+  <nav class="header-menu">
+    <a href="#">Accueil</a>
+    <a href="#">Nos Boutiques</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- Bande défilante bleue corrigée -->
+<div class="top-marquee">
+  <span>🔥 Obtenez votre boutique complète à 100€ dès aujourd’hui avec ROBUSTE-IA 
+    <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify Logo">
+  </span>
+</div>
+
+<section class="hero">
+  <h1>Crée ta boutique Shopify<br>avec ROBUSTE-IA en 24h</h1><p>Découvre nos boutiques prêtes à vendre, configurées avec les meilleurs produits et un design professionnel optimisé.</p>
+  <div class="cta-box">
+    <a href="#" class="cta-main">Découvrir les boutiques</a>
+  </div>
+</section>
+
+<h2 style="text-align:center; margin-top:70px;">Nos partenaires & plateformes</h2>
+<p style="text-align:center; color:#9aa4b8;">Ils nous font confiance pour propulser vos boutiques en ligne.</p>
+
+<div class="partners">
+  <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify">
+  <img src="https://i.postimg.cc/DyK70Rcg/IMG-2198.png" alt="AliExpress">
+  <img src="https://i.postimg.cc/8PHg5ccG/IMG-2199.png" alt="Amazon">
+  <img src="https://i.postimg.cc/SRhHQbpt/IMG-2200.png" alt="TikTok">
+  <img src="https://i.postimg.cc/0yB3Mws8/IMG-2201.png" alt="Facebook">
+  <img src="https://i.postimg.cc/qMBZ1LB6/IMG-2202.png" alt="Instagram">
+  <img src="https://i.postimg.cc/Kcf03M7R/IMG-2204.png" alt="Puma">
+  <img src="https://i.postimg.cc/9fypmRFF/IMG-2205.png" alt="Adidas">
+  <img src="https://i.postimg.cc/x8pGxLg8/IMG-2206.png" alt="Google Ads">
+</div>
+
+<footer>
+  © 2025 ROBUSTE-IA — Tous droits réservés.
+  <div class="kmj">K • M • J</div>
+</footer>
+
+</body>
+</html>
