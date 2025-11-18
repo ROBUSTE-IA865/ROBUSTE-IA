@@ -3,193 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROBUSTE-IA — Crée ta boutique Shopify en 24h</title>
+<title>ROBUSTE-IA — Crée ta boutique Shopify en 5 minutes</title>
 
 <style>
 /* GLOBAL */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background: #0b0f19;
-  color: white;
-  overflow-x: hidden;
+body{
+  margin:0;
+  padding:0;
+  font-family:"Inter", sans-serif;
+  background:#0b0f19;
+  color:white;
+  overflow-x:hidden;
 }
 
 /* HEADER */
-header {
-  width: 100%;
-  padding: 14px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(11,15,25,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+header{
+  width:100%;
+  padding:14px 20px;
+  position:fixed;
+  top:0; left:0;
+  background:rgba(11,15,25,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-sizing:border-box;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg,#4aa9ff,#b5d9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 14px rgba(74,169,255,0.55);
-  cursor: pointer;
+/* Logo texte */
+.logo{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#4aa9ff,#b5d9ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 14px rgba(74,169,255,0.55);
+  cursor:pointer;
 }
 
-.header-menu {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+/* Menu centre */
+.header-menu{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  align-items:center;
+  flex:1;
 }
+.header-menu a{
+  text-decoration:none;
+  color:#cfd3df;
+  font-size:14px;
+  transition:.2s;
+}
+.header-menu a:hover{ color:white; }
 
-.header-menu a {
-  text-decoration: none;
-  color: #cfd3df;
-  font-size: 14px;
-  transition: .2s;
+/* Boutons à droite */
+.auth-buttons{
+  display:flex;
+  gap:8px;
 }
-.header-menu a:hover {
-  color: white;
+.auth-buttons a{
+  text-decoration:none;
+  font-size:13px;
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:600;
 }
-
-/* MARQUEE SOUS LE MENU */
-.top-marquee {
-  position: fixed;
-  top: 80px; /* légèrement plus bas */
-  left: 0;
-  width: 100%;
-  background: rgba(40,115,255,0.3);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-weight: 700;
-  font-size: 17px;
-  padding: 12px 0;
-  border-top: 1px solid rgba(255,255,255,0.25);
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-  white-space: nowrap;
-  overflow: hidden;
-  z-index: 999;
+.btn-login{
+  background:white;
+  color:#000;
 }
-
-.top-marquee span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scrollText 12s linear infinite;
-}
-
-.top-marquee img {
-  height: 26px;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-@keyframes scrollText {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+.btn-signup{
+  border:1px solid rgba(255,255,255,0.4);
+  color:white;
 }
 
 /* HERO */
-.hero {
-  padding-top: 180px; /* ajusté pour compenser la bande */
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+.hero{
+  padding-top:130px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+  padding-left:20px;
+  padding-right:20px;
 }
-
-.hero h1 {
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 18px;
+.hero h1{
+  font-size:38px;
+  font-weight:800;
+  line-height:1.25;
+  margin-bottom:18px;
 }
-
-.hero p {
-  font-size: 17px;
-  color: #9aa4b8;
-  max-width: 620px;
-  margin: auto;
-  line-height: 1.6;
+.hero p{
+  font-size:17px;
+  color:#9aa4b8;
+  max-width:620px;
+  margin:auto;
+  line-height:1.6;
 }
 
 /* CTA */
-.cta-box {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+.cta-box{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.cta-main,
+.cta-second{
+  display:block;
+  width:100%;
+  max-width:320px;
+  text-align:center;
+  padding:14px 0;
+  border-radius:12px;
+  font-weight:600;
+  font-size:16px;
+  text-decoration:none;
+  transition:all .3s ease;
+}
+.cta-main{
+  background:#3c7bff;
+  color:white;
+  box-shadow:0 0 18px rgba(60,123,255,0.5);
+}
+.cta-main:hover{
+  background:#2e6ae3;
+  transform:scale(1.02);
+}
+.cta-second{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
 }
 
-.cta-main {
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  text-align: center;
-  padding: 14px 0;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 16px;
-  background: #3c7bff;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 0 18px rgba(60,123,255,0.5);
+/* MARQUEE */
+.marquee-container{
+  width:100%;
+  overflow:hidden;
+  margin-top:40px;
+}
+.marquee{
+  white-space:nowrap;
+  display:inline-block;
+  padding:16px 0;
+  font-size:18px;
+  font-weight:700;
+  color:white;
+  background:rgba(40,115,255,0.32);
+  backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,0.35);
+  border-bottom:1px solid rgba(255,255,255,0.35);
+  animation:scroll 6s linear infinite;
+}
+@keyframes scroll{
+  0% {transform:translateX(100%);}
+  100% {transform:translateX(-100%);}
 }
 
 /* PARTENAIRES */
-.partners {
-  margin-top: 60px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
-  padding: 0 25px 50px;
-  box-sizing: border-box;
+.partners{
+  margin-top:50px;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  padding:0 25px 50px;
+  box-sizing:border-box;
 }
-
-.partners img {
-  width: 90px;
-  margin: auto;
-  opacity: 0.85;
-  filter: brightness(0) invert(1);
-  transition: .25s;
+.partners img{
+  width:90px;
+  margin:auto;
+  opacity:0.85;
+  filter:brightness(0) invert(1);
+  transition:.25s;
 }
-.partners img:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.partners img:hover{
+  opacity:1;
+  transform:scale(1.05);
 }
 
 /* FOOTER */
-footer {
-  padding: 25px 20px 35px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  color: #8b94a5;
-  font-size: 14px;
+footer{
+  padding:25px 20px 35px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.1);
+  color:#8b94a5;
+  font-size:14px;
+}
+.kmj{
+  margin-top:6px;
+  font-size:11px;
+  opacity:0.5;
+  letter-spacing:3px;
 }
 
-.kmj {
-  margin-top: 6px;
-  font-size: 11px;
-  opacity: 0.5;
-  letter-spacing: 3px;
-}
-
-/* MOBILE */
-@media(max-width:650px) {
-  .hero h1 { font-size: 30px; }
-  .top-marquee { font-size: 15px; top: 72px; }
+/* RESPONSIVE */
+@media(max-width:650px){
+  header{
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .header-menu{
+    order:2;
+    flex-basis:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .auth-buttons{
+    order:1;
+  }
+  .hero h1{
+    font-size:30px;
+  }
+  .marquee{
+    font-size:16px;
+  }
 }
 </style>
 </head>
@@ -199,40 +232,43 @@ footer {
 <header>
   <div class="logo">ROBUSTE-IA</div>
   <nav class="header-menu">
-    <a href="#">Accueil</a>
-    <a href="#">Nos Boutiques</a>
-    <a href="#">FAQ</a>
-    <a href="#">Contact</a>
+    <a href="#">Fonctionnalités</a>
+    <a href="Boutiques.html">Boutiques</a>
+    <a href="#">Prix</a>
+    <a href="#">Support</a>
   </nav>
+  <div class="auth-buttons">
+    <a href="Boutiques.html" class="btn-login">Entrer</a>
+    <a href="Boutiques.html" class="btn-signup">Accéder</a>
+  </div>
 </header>
 
-<!-- Bande défilante bleue corrigée -->
-<div class="top-marquee">
-  <span>🔥 Obtenez votre boutique complète à 100€ dès aujourd’hui avec ROBUSTE-IA 
-    <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify Logo">
-  </span>
-</div>
-
 <section class="hero">
-  <h1>Crée ta boutique Shopify<br>avec ROBUSTE-IA en 24h</h1><p>Découvre nos boutiques prêtes à vendre, configurées avec les meilleurs produits et un design professionnel optimisé.</p>
+  <h1>Crée ta boutique Shopify<br>avec ROBUSTE-IA en 5 minutes</h1>
+  <p>L’IA la plus puissante d’Afrique pour générer automatiquement ton produit gagnant, ton design Shopify, tes pages et ton import 1-clic.</p>
+
   <div class="cta-box">
-    <a href="#" class="cta-main">Découvrir les boutiques</a>
+    <a href="Boutiques.html" class="cta-main">Créer ma boutique maintenant</a>
+    <a href="Boutiques.html" class="cta-second">Voir les boutiques disponibles</a>
   </div>
 </section>
 
-<h2 style="text-align:center; margin-top:70px;">Nos partenaires & plateformes</h2>
-<p style="text-align:center; color:#9aa4b8;">Ils nous font confiance pour propulser vos boutiques en ligne.</p>
+<div class="marquee-container">
+  <div class="marquee">
+    Crée ta boutique 20× plus vite — IA entraînée sur 1000+ boutiques — Pages optimisées conversion — Import Shopify instantané —
+  </div>
+</div>
 
 <div class="partners">
-  <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png" alt="Shopify">
-  <img src="https://i.postimg.cc/DyK70Rcg/IMG-2198.png" alt="AliExpress">
-  <img src="https://i.postimg.cc/8PHg5ccG/IMG-2199.png" alt="Amazon">
-  <img src="https://i.postimg.cc/SRhHQbpt/IMG-2200.png" alt="TikTok">
-  <img src="https://i.postimg.cc/0yB3Mws8/IMG-2201.png" alt="Facebook">
-  <img src="https://i.postimg.cc/qMBZ1LB6/IMG-2202.png" alt="Instagram">
-  <img src="https://i.postimg.cc/Kcf03M7R/IMG-2204.png" alt="Puma">
-  <img src="https://i.postimg.cc/9fypmRFF/IMG-2205.png" alt="Adidas">
-  <img src="https://i.postimg.cc/x8pGxLg8/IMG-2206.png" alt="Google Ads">
+  <img src="https://i.postimg.cc/632B4XS1/IMG-2197.png">
+  <img src="https://i.postimg.cc/DyK70Rcg/IMG-2198.png">
+  <img src="https://i.postimg.cc/8PHg5ccG/IMG-2199.png">
+  <img src="https://i.postimg.cc/SRhHQbpt/IMG-2200.png">
+  <img src="https://i.postimg.cc/0yB3Mws8/IMG-2201.png">
+  <img src="https://i.postimg.cc/qMBZ1LB6/IMG-2202.png">
+  <img src="https://i.postimg.cc/Kcf03M7R/IMG-2204.png">
+  <img src="https://i.postimg.cc/9fypmRFF/IMG-2205.png">
+  <img src="https://i.postimg.cc/x8pGxLg8/IMG-2206.png">
 </div>
 
 <footer>
